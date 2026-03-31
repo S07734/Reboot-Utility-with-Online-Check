@@ -1,0 +1,1 @@
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /target:winexe /out:RebootUtility.exe system_tray_reboot.cs /win32icon:power.ico /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:mscorlib.dll
