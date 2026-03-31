@@ -9,7 +9,7 @@ Designed for unattended machines (digital signage, kiosks, point-of-sale systems
 - **Scheduled Reboots** — Set a daily reboot time with per-day selection
 - **Online Check** — Pings a server before rebooting; skips the reboot if the network is down
 - **Ping Retry** — If the first ping fails, waits 2 minutes and tries again before giving up
-- **Fuzzy Time** — Optional ±5 minute random offset to stagger reboots across multiple machines
+- **Fuzzy Time** — Optional ±5 minute random offset to stagger reboots across multiple machines and prevent the destination server from interpreting simultaneous pings as a DDoS attack
 - **Auto-Update** — Checks for new versions every 24 hours and updates with one click
 - **System Tray** — Runs silently in the background with a settings dialog accessible from the tray icon
 - **Run at Startup** — Optional Windows startup registration
