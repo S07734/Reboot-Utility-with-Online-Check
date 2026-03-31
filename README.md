@@ -26,18 +26,9 @@ The settings dialog shows schedule status, day selection, reboot time, ping conf
 
 ## Installation
 
-### Option 1: Download and run
-
-1. Download `RebootUtility.exe` and `RebootUtilityUpdate.exe` from [`bin/latest/`](bin/latest/)
-2. Place both files in a folder (e.g., `C:\Program Files\RebootUtility\`)
-3. Run `RebootUtility.exe`
-4. Configure your schedule in the settings dialog (right-click the tray icon)
-
-### Option 2: Use the install script
-
 1. Download [`RebootUtility_Install_Update.bat`](src/RebootUtility_Install_Update.bat)
 2. Run as Administrator
-3. The script downloads the latest binary, installs it, and sets up startup
+3. The script downloads the latest binary to `%SystemDrive%\rebootutil\`, installs it, and sets up startup
 
 ## Configuration
 

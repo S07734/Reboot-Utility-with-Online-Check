@@ -57,8 +57,8 @@ powershell -Command ^
 :: ------------------------------------------------------------
 :: Download new executable
 :: ------------------------------------------------------------
-set "destFolder=%USERPROFILE%\Documents\Reboot Utility\files"
-set "destFile=%destFolder%\rebootutility.exe"
+set "destFolder=%SystemDrive%\rebootutil"
+set "destFile=%destFolder%\RebootUtility.exe"
 set "url=https://raw.githubusercontent.com/S07734/Reboot-Utility-with-Online-Check/main/bin/latest/RebootUtility.exe"
 
 if not exist "%destFolder%" mkdir "%destFolder%"
@@ -66,6 +66,9 @@ if not exist "%destFolder%" mkdir "%destFolder%"
 :: FIX: Delete any existing/partial file before downloading so a failed
 ::      download can't leave a corrupt exe that passes the existence check
 if exist "%destFile%" del /q /f "%destFile%" >nul 2>&1
+
+set "updaterUrl=https://raw.githubusercontent.com/S07734/Reboot-Utility-with-Online-Check/main/bin/latest/RebootUtilityUpdate.exe"
+set "updaterFile=%destFolder%\RebootUtilityUpdate.exe"
 
 echo Downloading RebootUtility...
 powershell -Command "Invoke-WebRequest -Uri '%url%' -OutFile '%destFile%' -ErrorAction Stop"
@@ -75,6 +78,10 @@ if not exist "%destFile%" (
     pause
     exit /b 1
 )
+
+echo Downloading RebootUtilityUpdate...
+if exist "%updaterFile%" del /q /f "%updaterFile%" >nul 2>&1
+powershell -Command "Invoke-WebRequest -Uri '%updaterUrl%' -OutFile '%updaterFile%' -ErrorAction Stop"
 
 :: ------------------------------------------------------------
 :: Register startup entry and launch
