@@ -56,6 +56,9 @@ namespace SystemTrayReboot
         [STAThread]
         static void Main(string[] args)
         {
+            // Ensure TLS 1.2 for GitHub update checks — older Windows defaults to TLS 1.0
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             string action = null;
             TimeSpan? tempRebootTime = null;
             string tempPingServer = null;
