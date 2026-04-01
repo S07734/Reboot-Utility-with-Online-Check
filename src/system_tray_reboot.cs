@@ -13,8 +13,8 @@ using System.Text;
 using System.Net;
 
 // Assembly-level attributes
-[assembly: AssemblyVersion("1.56.0.0")]
-[assembly: AssemblyFileVersion("1.56.0.0")]
+[assembly: AssemblyVersion("1.57.0.0")]
+[assembly: AssemblyFileVersion("1.57.0.0")]
 [assembly: AssemblyProduct("Reboot Utility")]
 
 namespace SystemTrayReboot
@@ -37,7 +37,7 @@ namespace SystemTrayReboot
         private const string MutexName = "Global\\SystemTrayRebootMutex";
         private const string EventName = "Global\\SystemTrayRebootShowSettings";
         private Form settingsForm;
-        private const string AppVersion = "1.56";
+        private const string AppVersion = "1.57";
         private string latestVersion = null;
         private volatile bool updateAvailable = false; // volatile: written on threadpool, read on UI
         private DateTime lastRebootFired = DateTime.MinValue; // Guard against double-fire in same minute
